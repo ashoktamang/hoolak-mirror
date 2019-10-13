@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import './Header.css'
+import './Header.css';
+import LoginPage from './auth/LoginComponent';
+
 class NavigationBar extends Component {
 state = {
   isOpen: false
@@ -38,8 +40,10 @@ render() {
                 <MDBIcon icon="user" />
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
-                <MDBDropdownItem href="#!">Sign Up</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Login</MDBDropdownItem>
+                <MDBDropdownItem href="/">Sign Up</MDBDropdownItem>
+                <MDBDropdownItem>
+                  <MDBNavLink to="/login">Login</MDBNavLink>
+                </MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>

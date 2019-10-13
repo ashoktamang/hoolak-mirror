@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Jumbo from './jumbotron/JumbotronComponent';
+import NavigationBar from './NavigationBarComponent';
 
-function Home() {
+const Home = () => {
     return(
-        <div className="container">
-            <h4>Home</h4>
+        <div>
+            <NavigationBar/>
+            <Jumbo/>
+            <div className="container">
+            <h4>Lorem Ipsum Ni </h4>
+            </div>
         </div>
-    );
+        
+    ); 
 }
 
 export default Home;
