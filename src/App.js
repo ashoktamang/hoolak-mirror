@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Main from './components/MainComponent';
 import { BrowserRouter as Router, 
   Route,
   Switch,
-  Link,
   Redirect  
 } from 'react-router-dom';
 import Home from './components/HomeComponent';
@@ -21,7 +19,7 @@ class App extends Component {
           <Redirect to="/home"/>
         </Switch>
         
-      </Router>
+      </Router>      
     );
   }
 }
