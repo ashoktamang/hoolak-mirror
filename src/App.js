@@ -7,6 +7,16 @@ import { BrowserRouter as Router,
 } from 'react-router-dom';
 import Home from './components/HomeComponent';
 import LoginPage from './components/auth/LoginComponent';
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from './firebaseConfig';
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
 
 class App extends Component {
   render() {
@@ -24,4 +34,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
