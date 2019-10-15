@@ -12,8 +12,12 @@ import {
 } from "mdbreact";
 import NavigationBar from "../NavigationBarComponent";
 // Import FirebaseAuth and firebase.
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import FirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
+
+// Styles
+import '../../firebaseui-styling.global.css'; // Import globally.
+
 
 class LoginPage extends Component {
   // The component's Local state.
@@ -53,58 +57,7 @@ class LoginPage extends Component {
       return (
         <div>
           <NavigationBar />
-          <MDBContainer>
-            <MDBRow>
-              <MDBCol md="6" className="offset-md-3">
-                <MDBCard>
-                  <MDBCardBody>
-                    <MDBCardHeader className="form-header warm-flame-gradient rounded">
-                      <h3 className="my-3">
-                        <MDBIcon icon="lock" /> Login:
-                      </h3>
-                    </MDBCardHeader>
-                    <label
-                      htmlFor="defaultFormEmailEx"
-                      className="grey-text font-weight-light"
-                    >
-                      Your email
-                    </label>
-                    <input
-                      type="email"
-                      id="defaultFormEmailEx"
-                      className="form-control"
-                    />
-      
-                    <label
-                      htmlFor="defaultFormPasswordEx"
-                      className="grey-text font-weight-light"
-                    >
-                      Your password
-                    </label>
-                    <input
-                      type="password"
-                      id="defaultFormPasswordEx"
-                      className="form-control"
-                    />
-      
-                    <div className="text-center mt-4">
-                      <MDBBtn color="deep-orange" className="mb-3" type="submit">
-                        Login
-                      </MDBBtn>
-                    </div>
-      
-                    <MDBModalFooter>
-                      <div className="font-weight-light">
-                        <p>Not a member? Sign Up</p>
-                        <p>Forgot Password?</p>
-                      </div>
-                    </MDBModalFooter>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBRow>
-          </MDBContainer>
-          <StyledFirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
+          <FirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
         </div>
       );
     }
@@ -112,7 +65,7 @@ class LoginPage extends Component {
       <div>
         <h1>My App</h1>
         <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-        <a href="!#" onClick={() => firebase.auth().signOut()}>Sign-out</a>
+        <a href="/login" onClick={() => firebase.auth().signOut()}>Sign-out</a>
       </div>
     );
   }
