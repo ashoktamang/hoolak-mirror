@@ -56,16 +56,14 @@ class LoginPage extends Component {
     if (!this.state.isSignedIn) {
       return (
         <div>
-          <NavigationBar />
           <FirebaseAuth uiConfig={this.uiConfig} firebaseAuth={firebase.auth()}/>
         </div>
       );
     }
     return (
       <div>
-        <h1>My App</h1>
         <p>Welcome {firebase.auth().currentUser.displayName}! You are now signed-in!</p>
-        <a href="/login" onClick={() => firebase.auth().signOut()}>Sign-out</a>
+        <a href="!#" onClick={() => firebase.auth().signOut()}>Sign-out</a>
       </div>
     );
   }
