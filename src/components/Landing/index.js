@@ -13,14 +13,23 @@ import QuotePage from '../Quote';
 
 class LandingPage extends Component {
   
+  styles = {
+    customMargin: {
+      marginTop: "10rem"
+    },
+    bgGradient: {
+      backgroundImage: "url('assets/Moss.jpg')"
+    }
+    
+  }
 
   render() {
     
     return (
       <>
         <MDBView src={`assets/bg1.jpg`} fixed>
-          <MDBMask className="rgba-white-light d-flex justify-content-center align-items-center">
-            <MDBContainer>
+          <MDBMask className="rgba-white-light align-items-center">
+            <MDBContainer style={this.styles.customMargin}>
               <MDBRow>
                 <MDBCol md="12" className="mb-4 white-text text-center">
                   <h1 className="h1-responsive display-3 mb-0 pt-md-5 pt-5 white-text font-weight-light" > Welcome 
@@ -31,7 +40,7 @@ class LandingPage extends Component {
                   <h3 className="h3-responsive pb-md-5 pb-sm-3 pb-5">
                     Solving the annoyance of not being able to send your Nepali fam a package to the door.
                     </h3>
-                  <MDBBtn outline color="white" className="white" size="lg" >Get Started</MDBBtn>
+                  <MDBBtn color="teal" round size="lg" >Get Started</MDBBtn>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
